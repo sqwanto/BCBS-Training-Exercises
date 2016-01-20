@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>BCBS Tagging</title>
+  <!-- Intranet Resources-->
+  <link rel="stylesheet" href="../Resources/bootstrap.min.css">
+  <script type="text/javascript" src="../Resources/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../Resources/jquery.min.js"></script>
+
+  <style type="text/css">
+    body {
+      font-family: Helvetica, sans-serif;
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    form {
+      font-size: 1.2em;
+      width: 100%;
+    }
+
+    h2 {
+      text-align: center;
+      font-weight: bold;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
+    h5{
+      font-size: 1.2em;
+    }
+
+    li {
+      font-size: 1.2em;
+    }
+
+    #active_label {
+      margin-left: 40px;
+    }
+
+    .info {
+      text-decoration: underline;
+    }
+
+    #submitBtn {
+      display: block;
+      margin: 50px auto 50px auto;
+      width: 100px;
+      height: 40px;
+      border-radius: 10px;
+      font-weight: bold;
+    }
+
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+
+    <h2>BCBS Event &amp; wEvent Tagging Exercises 1</h2>
+
+    <div class="alert alert-success" role="alert">
+      <!-- BCBS Delaware / wEvent / tag: Highmark -->
+      <h4>A complete enrollment comes in for a <span class="info">wEvent</span> with the ID# <span class="info">SOD123456789001</span></h4>
+    </div>
+
+    <h5>Use one of the following BCBS Prefix Sites to search for prefixes</h5>
+    <ul>
+      <li><a href="http://mypayerdirectory.com/bcbs-prefix-list/" target="_blank">My Payer Directory</a></li>
+      <li><a href="http://www.bcbsa.com/already-a-member/" target="_blank">BCBS.com</a></li>
+    </ul>
+    <br>
+
+    <form name="bcbs_tagging">
+
+      <label for="prefix_1">1. Which of the following <u>payers</u> is associated with the prefix <u>SOD</u>?</label>
+      <select id="prefix_1" name="prefix_1">
+        <option value="1"></option>
+        <option value="2">Carefirst</option>
+        <option value="3">BCBS of Delaware</option>
+        <option value="4">Highmark</option>
+      </select>
+      
+      <br>
+      <br>
+
+      <label>2. Looking at the <a href="http://cardioweb/teams/rs/Approved%20Documents/Insurance%20Verification%20Team/Blue%20Cross%20Blue%20Shield%20Updates/BCBS%20CardioNet%20Tagging.pdf" target="_blank">BCBS Tagging Guide</a>, do you see <u>either the payer or the prefix</u> under the <u>Payor Column</u>?</label>
+      <br>
+      <label for="active" id="active_label">Yes</label>
+      <input id="active_yes" type="radio" name="active" value="Yes">
+      <label for="active_no">No</label>
+      <input id="active_no" type="radio" name="active" value="No">
+      <br>
+      <br>
+
+      <label for="column">3. Which of the <u>NextGen Payor Name columns</u> would you look under for this encounter?</label>
+      <select id="column" name="column">
+        <option value="1"></option>
+        <option value="2">1st: MCOTS</option>
+        <option value="3">2nd: wEvents, MCOTasEvents &amp; Holters</option>
+        <option value="4">3rd: Events &amp; Pacemakers</option>
+      </select>
+      <br>
+      <br>
+
+      <label for="tag_1">4. Now we have all the necessary information to tag the encounter correctly.  Which <u>payer</u> would we tag in NextGen?</label>
+      <select id="tag_1" name="tag_1">
+        <option value="1"></option>
+        <option value="2">BCBS Minnesota EHP</option>
+        <option value="3">BCBS of Delaware</option>
+        <option value="4">Highmark</option>
+      </select>
+      <br>
+      <br>
+
+      <label for="facility_1">5. Last but not least, does the <u>facility</u> need to be changed?</label><br>
+      <label for="active" id="active_label">Yes</label>
+      <input id="active_yes" type="radio" name="active" value="Yes">
+      <label for="active_no">No</label>
+      <input id="active_no" type="radio" name="active" value="No">
+
+      <input type="submit" class="btn-success" value="Submit" id="submitBtn">
+
+    </form>
+  </div> <!-- ./container -->
+  
+</body>
+
+<script>
+
+  var firstAnswer = $("#prefix_1");
+  var firstAnswerText = firstAnswer.text;
+
+  $("#submitBtn").click(function(){
+      //alert("Text");
+
+     alert(firstAnswerText);
+
+    });
+  
+</script>
+</html>
