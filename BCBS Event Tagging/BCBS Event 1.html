@@ -18,6 +18,7 @@
     form {
       font-size: 1.2em;
       width: 100%;
+      clear: both;
     }
 
     h2 {
@@ -26,15 +27,23 @@
     }
 
     h4 {
-      margin: 0;
+      font-weight: bold;
+      margin: 0 0 5px 0;
     }
 
     h5{
       font-size: 1.2em;
     }
 
-    .answers {
-      display: none;
+    .student_answers {
+      display: visible;
+      float: left;
+     /* background-color: blue;*/
+    }
+
+    .correct_answers {
+      display: visible;
+      background-color: green;
     }
 
     li {
@@ -69,7 +78,10 @@
 
     <div class="alert alert-success" role="alert">
       <!-- BCBS Delaware / wEvent / tag: Highmark -->
-      <h4>A complete enrollment comes in for a <span class="info">wEvent</span> with the ID# <span class="info">SOD123456789001</span></h4>
+      <ul><h4>A complete enrollment comes in for a <span class="info">wEvent</span> with the following insurance information: </h4>
+        <li>Payor: BCBS</li>
+        <li>ID: SOD123456789001</li>
+      </ul>
     </div>
 
     <h5>Use one of the following BCBS Prefix Sites to search for prefixes</h5>
@@ -79,9 +91,27 @@
     </ul>
     <br>
 
-    <div class="answers"> <!-- Begin .answers-->
-      <h4>Answers</h4>
+  <div class="row">
+    <div class="questions col-md-4"> <!-- Begin .answers-->
+      <h4>Your Answers</h4>
       <ol>
+        <li>Which of the following payerse is associated with the prefix SOD?</li>
+        <li>Looking at the BCBS Tagging Guide, do you see either the payer or the prefix under the Payor Column?</li>
+        <li>Which of the NextGen Payor Name columns would you look under for this encounter?</li>
+        <li>Which payer would we tag in NextGen?</li>
+        <li>Last but not least, does the facility need to be changed?</li>
+      </ol>
+    </div>
+    <div class="student_answers col-md-4"> <!-- Begin .answers-->
+      <h4>Your Answers</h4>
+      <ol>
+        <!-- jQuery to add list elements from selections here -->
+      </ol>
+    </div>
+
+    <div class="correct_answers col-md-4"> <!-- Begin .answers-->
+      <h4>Correct Answers</h4>
+      <ol >
         <li>BCBS Delaware</li>
         <li>Yes</li>
         <li>wEvents, MCOTasEvent &amp; Holters</li>
@@ -89,6 +119,7 @@
         <li>No</li>
       </ol>
     </div>
+  </div> <!-- end row -->
 
     <form name="bcbs_tagging"> <!-- Begin form-->
 
@@ -106,9 +137,9 @@
       <label>2. Looking at the <a href="http://cardioweb/teams/rs/Approved%20Documents/Insurance%20Verification%20Team/Blue%20Cross%20Blue%20Shield%20Updates/BCBS%20CardioNet%20Tagging.pdf" target="_blank">BCBS Tagging Guide</a>, do you see <u>either the payer or the prefix</u> under the <u>Payor Column</u>?</label>
       <br>
       <label for="active" id="active_label">Yes</label>
-      <input id="active_yes" type="radio" name="active" value="Yes">
+      <input id="active_yes" type="radio" name="payor_prefix" value="Yes">
       <label for="active_no">No</label>
-      <input id="active_no" type="radio" name="active" value="No">
+      <input id="active_no" type="radio" name="payor_prefix" value="No">
       <br>
       <br>
 
@@ -134,9 +165,9 @@
 
       <label for="facility_1">5. Last but not least, does the <u>facility</u> need to be changed?</label><br>
       <label for="active" id="active_label">Yes</label>
-      <input id="active_yes" type="radio" name="active" value="Yes">
+      <input id="active_yes" type="radio" name="facility" value="Yes">
       <label for="active_no">No</label>
-      <input id="active_no" type="radio" name="active" value="No">
+      <input id="active_no" type="radio" name="facility" value="No">
 
       <input type="submit" class="btn-success" value="Submit" id="submitBtn">
 
