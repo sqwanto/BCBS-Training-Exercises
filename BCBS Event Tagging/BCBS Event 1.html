@@ -35,15 +35,18 @@
       font-size: 1.2em;
     }
 
+    .row h4 {
+      text-align: center;
+      text-decoration: underline;
+    }
+
     .student_answers {
       display: visible;
-      float: left;
      /* background-color: blue;*/
     }
 
     .correct_answers {
       display: visible;
-      background-color: green;
     }
 
     li {
@@ -93,7 +96,7 @@
 
   <div class="row">
     <div class="questions col-md-4"> <!-- Begin .answers-->
-      <h4>Your Answers</h4>
+      <h4>Questions</h4>
       <ol>
         <li>Which of the following payerse is associated with the prefix SOD?</li>
         <li>Looking at the BCBS Tagging Guide, do you see either the payer or the prefix under the Payor Column?</li>
@@ -102,14 +105,20 @@
         <li>Last but not least, does the facility need to be changed?</li>
       </ol>
     </div>
-    <div class="student_answers col-md-4"> <!-- Begin .answers-->
+
+    <div class="student_answers col-md-4 alert alert-info"> <!-- Begin .answers-->
       <h4>Your Answers</h4>
       <ol>
         <!-- jQuery to add list elements from selections here -->
+        <li>filler</li>
+        <li>filler</li>
+        <li>filler</li>
+        <li>filler</li>
+        <li>filler</li>
       </ol>
     </div>
 
-    <div class="correct_answers col-md-4"> <!-- Begin .answers-->
+    <div class="correct_answers col-md-4 alert alert-success"> <!-- Begin .answers-->
       <h4>Correct Answers</h4>
       <ol >
         <li>BCBS Delaware</li>
