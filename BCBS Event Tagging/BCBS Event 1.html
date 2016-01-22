@@ -33,6 +33,10 @@
       font-size: 1.2em;
     }
 
+    .answers {
+      display: none;
+    }
+
     li {
       font-size: 1.2em;
     }
@@ -75,14 +79,25 @@
     </ul>
     <br>
 
-    <form name="bcbs_tagging">
+    <div class="answers"> <!-- Begin .answers-->
+      <h4>Answers</h4>
+      <ol>
+        <li>BCBS Delaware</li>
+        <li>Yes</li>
+        <li>wEvents, MCOTasEvent &amp; Holters</li>
+        <li>Highmark</li>
+        <li>No</li>
+      </ol>
+    </div>
+
+    <form name="bcbs_tagging"> <!-- Begin form-->
 
       <label for="prefix_1">1. Which of the following <u>payers</u> is associated with the prefix <u>SOD</u>?</label>
       <select id="prefix_1" name="prefix_1">
-        <option value="1"></option>
-        <option value="2">Carefirst</option>
-        <option value="3">BCBS of Delaware</option>
-        <option value="4">Highmark</option>
+        <option value="blank"></option>
+        <option value="Carefirst">Carefirst</option>
+        <option value="BCBS of Delaware">BCBS of Delaware</option>
+        <option value="Highmark">Highmark</option>
       </select>
       
       <br>
@@ -125,20 +140,17 @@
 
       <input type="submit" class="btn-success" value="Submit" id="submitBtn">
 
-    </form>
+    </form> <!-- end form -->
+
   </div> <!-- ./container -->
   
 </body>
 
 <script>
 
-  var firstAnswer = $("#prefix_1");
-  var firstAnswerText = firstAnswer.text;
-
   $("#submitBtn").click(function(){
-      //alert("Text");
 
-     alert(firstAnswerText);
+     alert($("#prefix_1 :selected").text());
 
     });
   
